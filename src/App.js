@@ -13,8 +13,22 @@ class App extends Component {
 
   createThought = (thought) => {
     const { thoughts } = this.state
-    const newThought = {...thought, id: thoughts.length}
+    const newThought = {...thought, id: Date.now()}
     this.setState({ thoughts: [...thoughts, newThought] });
+  }
+
+  deleteThought = (id) => {
+    const index = this.findIndexFromId(id);
+    let newThoughts=[...this.state.thoughts]
+    newThoughts.splice(index, 1);
+    this.setState({ thoughts: newThoughts })
+  }
+
+  findIndexFromId = (id) => {
+   const index = this.state.thoughts.findIndex(thought => {
+      return thought.id === id
+    });
+    return index;
   }
 
   render() {
@@ -25,7 +39,9 @@ class App extends Component {
         </div>
         <CreateThought createThought={this.createThought} />
         <div>
-          <ThoughtList thoughtList={this.state.thoughts} />
+          <ThoughtList 
+            thoughtList={this.state.thoughts}
+            deleteThought={this.deleteThought} />
         </div>
       </div>
     );
