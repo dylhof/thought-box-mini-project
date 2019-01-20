@@ -17,15 +17,16 @@ class CreateThought extends Component {
     event.preventDefault();
     this.props.createThought(this.state);
     this.setState({ body: '', title: '' });
+    
   }
 
   render() {
     return(
       <form className="new-thought-form" onSubmit={this.handleSubmit}>
         <label htmlFor="title">Thought Title: </label>
-        <input id="titleInput" type="text" name="title" placeholder="Enter Title Here" onChange={this.handleChange}/>
+        <input id="titleInput" type="text" name="title" value={this.state.title} placeholder="Enter Title Here" onChange={this.handleChange}/>
         <label htmlFor="body">Thought: </label>
-        <input type="text" name="body" placeholder="Enter Thought Here" onChange={this.handleChange}/>
+        <input type="text" name="body" value={this.state.body} placeholder="Enter Thought Here"  onChange={this.handleChange}/>
         <input className="submit-new-thought-btn" type="submit" value="Submit New Thought" />
       </form>
     );  

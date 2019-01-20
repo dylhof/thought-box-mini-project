@@ -43,7 +43,7 @@ describe('CreateThought', () => {
       title: ''
     };
     wrapper.setState({ body: 'World', title: 'Hello' })
-    wrapper.find('.submit-new-thought-btn').simulate('click', { preventDefault: () => {} })
+    wrapper.find('.new-thought-form').simulate('submit', { preventDefault: () => {} })
     expect(createThoughtMock).toBeCalledWith({ body: 'World', title: 'Hello' });
     expect(wrapper.state()).toEqual(expectedState)
   });

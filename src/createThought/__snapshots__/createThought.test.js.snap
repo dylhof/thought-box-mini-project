@@ -41,14 +41,14 @@ ShallowWrapper {
           placeholder="Enter Thought Here"
           type="text"
         />,
-        <button
+        <input
           className="submit-new-thought-btn"
-          onClick={[Function]}
-        >
-          Submit New Thought
-        </button>,
+          type="submit"
+          value="Submit New Thought"
+        />,
       ],
       "className": "new-thought-form",
+      "onSubmit": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -110,13 +110,13 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Submit New Thought",
           "className": "submit-new-thought-btn",
-          "onClick": [Function],
+          "type": "submit",
+          "value": "Submit New Thought",
         },
         "ref": null,
-        "rendered": "Submit New Thought",
-        "type": "button",
+        "rendered": null,
+        "type": "input",
       },
     ],
     "type": "form",
@@ -151,14 +151,14 @@ ShallowWrapper {
             placeholder="Enter Thought Here"
             type="text"
           />,
-          <button
+          <input
             className="submit-new-thought-btn"
-            onClick={[Function]}
-          >
-            Submit New Thought
-          </button>,
+            type="submit"
+            value="Submit New Thought"
+          />,
         ],
         "className": "new-thought-form",
+        "onSubmit": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -220,13 +220,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Submit New Thought",
             "className": "submit-new-thought-btn",
-            "onClick": [Function],
+            "type": "submit",
+            "value": "Submit New Thought",
           },
           "ref": null,
-          "rendered": "Submit New Thought",
-          "type": "button",
+          "rendered": null,
+          "type": "input",
         },
       ],
       "type": "form",
