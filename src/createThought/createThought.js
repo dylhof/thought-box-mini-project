@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
 
 class CreateThought extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      body: '',
+      title: ''
+    }
+  }
+
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.createThought(this.state);
+    this.setState({ body: '', title: '' });
+  }
+
   render() {
     return(
-      <div>
-        //input with a lable of thought title
-        //input with a lable of thought
-        // submit New Thought button which calls the createThought function passed as props from app
-      </div>
-    );
+      <form className="new-thought-form" onSubmit={this.handleSubmit}>
+        <label htmlFor="title">Thought Title: </label>
+        <input id="titleInput" type="text" name="title" placeholder="Enter Title Here" onChange={this.handleChange}/>
+        <label htmlFor="body">Thought: </label>
+        <input type="text" name="body" placeholder="Enter Thought Here" onChange={this.handleChange}/>
+        <input className="submit-new-thought-btn" type="submit" value="Submit New Thought" />
+      </form>
+    );  
   }
 }
 
