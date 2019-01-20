@@ -1,10 +1,17 @@
 import React from 'react';
+import { ThoughtCard } from '../thoughtCard/thoughtCard'
 
-export const ThoughtList = () => {
+export const ThoughtList = (props) => {
 
   return (
     <div>
-    ThoughtList
+      {props.thoughtList.map(thought => {
+        return <ThoughtCard 
+                  key={thought.id} 
+                  thought={thought}
+                  deleteThought={props.deleteThought} />
+        })
+      }
     </div>
   );
 }
