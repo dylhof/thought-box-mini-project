@@ -27,7 +27,7 @@ class CreateThought extends Component {
           <label htmlFor="title">Thought Title: </label>
           <input id="titleInput" type="text" name="title" value={this.state.title} placeholder="Enter Title Here" onChange={this.handleChange} required/>
           <label htmlFor="body">Thought: </label>
-          <input type="text" name="body" value={this.state.body} placeholder="Enter Thought Here"  onChange={this.handleChange} required/>
+          <textarea className="new-thought-body-input" type="text" name="body" value={this.state.body} placeholder="Enter Thought Here"  onChange={this.handleChange} maxlength="200" minLength="1" required/>
           <input className="submit-new-thought-btn" type="submit" value="Submit New Thought" />
         </form>
       </div>
