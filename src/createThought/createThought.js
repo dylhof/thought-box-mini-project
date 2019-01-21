@@ -24,9 +24,9 @@ class CreateThought extends Component {
     return(
       <form className="new-thought-form" onSubmit={this.handleSubmit}>
         <label htmlFor="title">Thought Title: </label>
-        <input id="titleInput" type="text" name="title" value={this.state.title} placeholder="Enter Title Here" onChange={this.handleChange}/>
+        <input id="titleInput" type="text" name="title" value={this.state.title} placeholder="Enter Title Here" onChange={this.handleChange} required/>
         <label htmlFor="body">Thought: </label>
-        <input type="text" name="body" value={this.state.body} placeholder="Enter Thought Here"  onChange={this.handleChange}/>
+        <input type="text" name="body" value={this.state.body} placeholder="Enter Thought Here"  onChange={this.handleChange} required/>
         <input className="submit-new-thought-btn" type="submit" value="Submit New Thought" />
       </form>
     );  
