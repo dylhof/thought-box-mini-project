@@ -4,7 +4,7 @@ import { ThoughtCard } from '../thoughtCard/thoughtCard'
 export const ThoughtList = (props) => {
 
   return (
-    <div>
+    <div className='thought-list-div'>
       {props.thoughtList.map(thought => {
         return <ThoughtCard 
                   key={thought.id} 
