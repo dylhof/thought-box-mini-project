@@ -4,24 +4,35 @@ import CreateThought from './createThought/createThought';
 import { ThoughtList } from './thoughtList/thoughtList';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      thoughts: []
+      thoughts: this.checkLocalStorage() || []
     };
+  }
+
+  addToLocalStorage = () => {
+    localStorage.setItem('thoughts', JSON.stringify(this.state.thoughts))
+  }
+
+  checkLocalStorage = () => {
+    if(localStorage.getItem('thoughts')) {
+      const storedThoughts = JSON.parse(localStorage.getItem('thoughts'))
+      return storedThoughts;
+    }
   }
 
   createThought = (thought) => {
     const { thoughts } = this.state
     const newThought = {...thought, id: Date.now()}
-    this.setState({ thoughts: [...thoughts, newThought] });
+    this.setState({ thoughts: [...thoughts, newThought] }, this.addToLocalStorage);
   }
 
   deleteThought = (id) => {
     const index = this.findIndexFromId(id);
     let newThoughts=[...this.state.thoughts]
     newThoughts.splice(index, 1);
-    this.setState({ thoughts: newThoughts })
+    this.setState({ thoughts: newThoughts }, this.addToLocalStorage)
   }
 
   findIndexFromId = (id) => {
