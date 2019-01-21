@@ -18,5 +18,9 @@
 
   .fa-trash-alt {
     color: $grey;
+    font-size: 30px;
+    &:hover {
+      color: #5b8f81;
+    }
   }
 }
