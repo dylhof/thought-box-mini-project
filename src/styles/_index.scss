@@ -10,5 +10,6 @@ body {
     margin: 0px;
     padding: 5px;
     @include font($grey, 45px, 900, left)
+    text-shadow: 3px 1px 1px $highlight-cool;
   }
 }
