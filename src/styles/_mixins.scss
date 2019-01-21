@@ -1,0 +1,16 @@
+@mixin font($color, $size, $weight, $align) {
+  color: $color;
+  font-family: $main-font;
+  font-size: $size;
+  font-weight: $weight;
+  text-align: $align;
+}
+
+@mixin box($bgcolor, $borderColor, $margin, $pad, $width) {
+  background-color: $bgcolor;
+  border: 2px solid $borderColor;
+  border-radius: 5px;
+  margin: $margin;
+  padding: $pad;
+  width: $width
+}
