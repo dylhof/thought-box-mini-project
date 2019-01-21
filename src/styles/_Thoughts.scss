@@ -1,0 +1,22 @@
+.thought-list-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.card-div {
+  @include box($primary, $grey, 15px, 15px, 60%);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 2px 2px $highlight-cool;
+
+  h3 {
+    @include font($grey, 32px, 700, left);
+    margin: 10px 0px;
+  }
+
+  .fa-trash-alt {
+    color: $grey;
+  }
+}
